@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function foo(){
+        let a=0;
+        let b=1;
+        function bar(){
+            rezult=a+b;
+            a=b;
+            b=rezult;
+            return bar;
+    }
+    bar.toString=function(){
+        return rezult;
+    }    
+    return bar;
+    }
+   var a=foo()()()()()();
+    console.log(+a);
+    //1 shag        //2 shag
+    //c=1           //c=2
+    //a=1           //a=1
+    //b=1           //b=2
+    //3 shag        //4 shag
+    //c=3           //c=5
+    //a=2           //a=3
+    //b=3           //b=5
+            //5 shag
+            //c=8
+            //a=5
+            //b=8
+    </script>
+</body>
+</html>
